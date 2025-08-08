@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webserver
-  </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webserver</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #0a0a0a;
+      color: #5ecdf0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      background-image: radial-gradient(ellipse at center, #111 0%, #000 100%);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #5ecdf0;
+      text-shadow: 0 0 4px #3b8fa1, 0 0 8px #1e5d6f;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #1e5d6f;
+      padding-bottom: 10px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #d3f8ff;
+      background-color: #1e1e1e;
+      border: 1px solid #3b8fa1;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 6px #1e5d6f;
+    }
+
+    button:hover {
+      background-color: #223344;
+      color: #8de3ff;
+      border-color: #5ecdf0;
+      box-shadow: 0 0 10px #3b8fa1, 0 0 20px #1e5d6f;
+      transform: scale(1.03);
+    }
+
+    body.glitch {
+      background-image: repeating-linear-gradient(
+        90deg,
+        #101010 0px,
+        #111111 2px,
+        #0d0d0d 4px
+      );
+      animation: glitchy 0.3s infinite;
+    }
+
+    @keyframes glitchy {
+      0% { background-position: 0 0; }
+      100% { background-position: 4px 4px; }
+    }
+  </style>
 </head>
 <body>
   <h1>This page is owned by Omar</h1>
-  <button>Click me for a cool trick</button>
+  <button onclick="doTrick()">Click me for a cool trick</button>
+
+  <script>
+    function doTrick() {
+      document.body.classList.toggle('glitch');
+      const h1 = document.querySelector('h1');
+      h1.textContent = h1.textContent.includes('Omar') 
+        ? "Watch Out Choom🕶️" 
+        : "This page is owned by Omar";
+      alert("🌒 Welcome to the Net.");
+    }
+  </script>
 </body>
 </html>
